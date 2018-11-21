@@ -38,7 +38,7 @@ class MazoTest extends TestCase {
         $this->assertTrue($mazo->mezclar());
         }
     /** Valida que se puede obtener la cantidad de
-    todas las cartas de un mazo
+    todas las cartas de un mazo 
     */
     public function testObtenerCantidad(){
         $carta1 = new Carta("5","ORO");
