@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
      * Valida que se puedan crear cartas.
      */
     public function testExiste() {
-        $carta = new Carta("2","PALO";
+        $carta = new Carta("2","PALO");
         $this->assertTrue(isset($carta));
     }
     /** Valida que se puede obtener
