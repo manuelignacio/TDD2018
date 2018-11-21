@@ -13,14 +13,27 @@ class MazoTest extends TestCase {
         $mazo = new Mazo;
         $this->assertTrue(isset($mazo));
     }
-
-    public function testVerYMezclar() {
-        $mazo = new Mazo;
-        $cartas = [1,2,3,4,5,6,7,8,9,10,11,12];
-        $mazo->agregarCartas($cartas);
-        $this->assertTrue($mazo->mezclar());
-        $this->assertNotEquals($mazo->obtenerMazo(),$cartas);
+    /** Primero valida la funcion esVacio(), 
+     * que devuelve true si el mazo es Vacio, 
+     * luego valida que el mazo tenga cartas
+     */
+    public function testMazoConCartas() {
+            $carta1 = new Carta("6","ORO");
+            $carta2 = new Carta("5","COPA");
+            $array1= array();
+            $mazo = new Mazo($array1);
+            $this->assertTrue($mazo->esVacio());
+            $array2= array($carta1,$carta2);
+            $mazo2 = new Mazo($array2);
+            $this->assertFalse($mazo2->esVacio());
     }
-
+    public function testMezclable() {
+        $carta1 = new Carta("8","ORO");
+        $carta2 = new Carta("5","COPA");
+        $carta3 = new Carta("1","COPA");
+        $array= array($carta1,$carta2,$carta3);
+        $mazo = new Mazo($array);
+        $this->assertTrue($mazo->mezclar());
+        }
 
 }
