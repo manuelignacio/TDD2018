@@ -35,7 +35,7 @@ class MazoTest extends TestCase {
         $carta3 = new Carta("1","COPA");
         $array= array($carta1,$carta2,$carta3);
         $mazo = new Mazo($array);
-        $this->assertTrue($mazo->mezclar());
+        $this->assertTrue($mazo->mezclar($mazo));
         }
     /** Valida que se puede obtener la cantidad de
     todas las cartas de un mazo 
@@ -68,6 +68,6 @@ class MazoTest extends TestCase {
         $array= array($carta1,$carta2);
         $mazo = new Mazo($array);
         $this->assertTrue($mazo->agregarCarta($carta3));
-         $this->assertEquals($mazo->obtenerCantidad(),3);
+         $this->assertEquals($mazo->obtCantidad(),3);
         }
 }

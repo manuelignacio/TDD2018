@@ -33,7 +33,7 @@ class Mazo {
       }
       public function agregarCarta(Carta $carta){
           $this->cartas[$this->obtCantidad()+1]=$carta;
-          $this->cantCartas+1;
+          $this->cant+1;
           return TRUE;
       }
       public function mezclar() {
