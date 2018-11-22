@@ -4,8 +4,8 @@ namespace TDD;
 
 class Mazo {
 
-  protected $cartas=array();
-  protected $cant=0;
+  protected $cartas;
+  protected $cant;
 
   public function construct($num){
     $this->cartas = $num;
