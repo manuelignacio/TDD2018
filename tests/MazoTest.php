@@ -46,7 +46,7 @@ class MazoTest extends TestCase {
         $carta3 = new Carta("9","ESPADA");
         $array= array($carta1,$carta2,$carta3);
         $mazo = new Mazo($array);
-        $this->assertEquals($mazo->obtenerCantidad(),3);
+        $this->assertEquals($mazo->obtCantidad(),3);
         }
     /** Valida que puedo obtener una carta especifica
     del mazo ingresando sus valores
