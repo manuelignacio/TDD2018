@@ -4,7 +4,7 @@ namespace TDD;
 
 class Mazo {
 
-  protected $cartas;
+  protected $cartas=array();
   protected $cant;
 
   public function construct($num){
@@ -16,15 +16,11 @@ class Mazo {
     public function obtCantidad(){
       return $this->cant;
     }
-    public function obtenerCarta($num, $palo){
-      $Carta1 = new Carta($num, $palo);
-      foreach ($this->cartas as &$valor) {
-        if($valor == $Carta1){
-          return $valor;
-        }
-          }
-      return FALSE;
-        }
+    public function obtenerCarta(){
+      
+      return $this->cartas[0];
+     
+    }
         public function esVacio(){
           if($this->cant != NULL){ 
         return FALSE;

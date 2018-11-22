@@ -56,7 +56,7 @@ class MazoTest extends TestCase {
         $carta2 = new Carta("7","ESPADA");
         $array= array($carta1,$carta2);
         $mazo = new Mazo($array);
-        $this->assertEquals($mazo->obtenerCarta("7","ESPADA"),$carta2);
+        $this->assertEquals($mazo->obtenerCarta(),$carta1);
         }
     /** Valida que puedo agregar una carta al mazo
     y luego cuenta la cantidad de cartas para verificar
