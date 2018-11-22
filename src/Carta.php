@@ -7,7 +7,7 @@ class Carta {
 protected $numero;
 protected $palo;
 
-public function constructor($numero, $palo){
+public function constructor(int $numero,string $palo){
 if($this->PaloValido($palo)){
   $this->palo = $palo;
 }
