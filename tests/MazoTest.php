@@ -12,7 +12,7 @@ class MazoTest extends TestCase {
     public function testExiste() {
         $array1=array();
         $mazo = new Mazo($array1);
-        assertTrue(isset($mazo));
+        $this->assertTrue(isset($mazo));
     }
     /** Primero valida la funcion esVacio(), 
      * que devuelve true si el mazo es Vacio, 
@@ -23,10 +23,10 @@ class MazoTest extends TestCase {
             $carta2 = new Carta("5","COPA");
             $array1= array();
             $mazo = new Mazo($array1);
-            assertTrue($mazo->esVacio());
+            $this->assertTrue($mazo->esVacio());
             $array2= array($carta1,$carta2);
             $mazo2 = new Mazo($array2);
-            assertFalse($mazo2->esVacio());
+            $this->assertFalse($mazo2->esVacio());
     }
     /** Valida que el mazo se puede mezclar 
     */
@@ -36,7 +36,7 @@ class MazoTest extends TestCase {
         $carta3 = new Carta("1","COPA");
         $array= array($carta1,$carta2,$carta3);
         $mazo = new Mazo($array);
-        assertTrue($mazo->mezclar());
+        $this->assertTrue($mazo->mezclar());
         }
     /** Valida que se puede obtener la cantidad de
     todas las cartas de un mazo 
@@ -47,7 +47,7 @@ class MazoTest extends TestCase {
         $carta3 = new Carta("9","ESPADA");
         $array= array($carta1,$carta2,$carta3);
         $mazo = new Mazo($array);
-        assertEquals($mazo->obtCantidad(),3);
+        $this->assertEquals($mazo->obtCantidad(),3);
         }
     /** Valida que puedo obtener una carta especifica
     del mazo ingresando sus valores
@@ -57,7 +57,7 @@ class MazoTest extends TestCase {
         $carta2 = new Carta("7","ESPADA");
         $array= array($carta1,$carta2);
         $mazo = new Mazo($array);
-        assertEquals($mazo->obtenerCarta(),$carta1);
+        $this->assertEquals($mazo->obtenerCarta(),$carta1);
         }
     /** Valida que puedo agregar una carta al mazo
     y luego cuenta la cantidad de cartas para verificar
@@ -68,7 +68,7 @@ class MazoTest extends TestCase {
         $carta3 = new Carta("11","COPA");
         $array1= array($carta1,$carta2);
         $mazo = new Mazo($array1);
-        assertTrue($mazo->agregarCarta($carta3));
-        assertEquals($mazo->obtCantidad(),3);
+        $this->assertTrue($mazo->agregarCarta($carta3));
+        $this->assertEquals($mazo->obtCantidad(),3);
         }
 }
