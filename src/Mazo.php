@@ -7,7 +7,7 @@ class Mazo {
   protected $cartas=array();
   protected $cant;
 
-  public function construct($num){
+  public function __construct($num){
     $this->cartas = $num;
     foreach ($this->cartas as &$valor) {
       $this->cant= $this->cant+1;

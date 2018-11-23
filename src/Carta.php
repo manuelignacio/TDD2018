@@ -7,7 +7,7 @@ class Carta {
 protected $numero;
 protected $palo;
 
-public function constructor($numero, $palo){
+public function __construct($numero, $palo){
   $this->palo = $palo;
   $this->numero = $numero;
 }
