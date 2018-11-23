@@ -11,7 +11,7 @@ class MazoTest extends TestCase {
      */
     public function testExiste() {
         $array1=array();
-        $mazo = new Mazo(array1);
+        $mazo = new Mazo($array1);
         $this->assertTrue(isset($mazo));
     }
     /** Primero valida la funcion esVacio(), 
