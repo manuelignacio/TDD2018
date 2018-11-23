@@ -22,6 +22,15 @@ class Mazo {
         return $this->cartas[0];
     }
 
+    public function obtenerCarta(string $nro, string $palo) {
+        foreach ($this->cartas as $carta) {
+            if ($carta->verNumero() == $nro && $carta->verPalo() == $palo) {
+                return $carta;
+            }
+        }
+        return false;
+    }
+
     public function esVacio(){
         if($this->cant != NULL){ 
             return FALSE;
