@@ -28,7 +28,7 @@ class Mazo {
       return TRUE;
       }
       public function agregarCarta(Carta $carta){
-          $this->cant+1;
+          $this->cant=this->cant+1;
           $this->cartas[$this->cant]=$carta;
           return TRUE;
       }

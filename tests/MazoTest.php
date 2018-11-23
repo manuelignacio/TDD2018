@@ -66,8 +66,8 @@ class MazoTest extends TestCase {
         $carta1 = new Carta("9","PALO");
         $carta2 = new Carta("4","ORO");
         $carta3 = new Carta("11","COPA");
-        $array= array($carta1,$carta2);
-        $mazo = new Mazo($array);
+        $array1= array($carta1,$carta2);
+        $mazo = new Mazo($array1);
         $this->assertTrue($mazo->agregarCarta($carta3));
          $this->assertEquals($mazo->obtCantidad(),3);
         }
