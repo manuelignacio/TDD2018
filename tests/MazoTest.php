@@ -57,11 +57,15 @@ class MazoTest extends TestCase {
     }
 
     /**
-     * Valida que puedo obtener la primera carta
-     * y luego una carta especifica del mazo
-     * ingresando sus valores
+     * Valida que puedo obtener la primera carta de un mazo
+     * y tambien una carta especifica ingresando sus
+     * valores, salvo que el mazo este vacio o la carta
+     * especifica no se encuentre
      */
     public function testObtenerCarta(){
+        $mazoVacio = new Mazo();
+        $this->assertFalse($mazoVacio->obtenerPrimeraCarta());
+        $this->assertFalse($mazoVacio->obtenerCarta("2", "COPA"));
         $carta1 = new Carta("9", "PALO");
         $carta2 = new Carta("7", "ESPADA");
         $carta3 = new Carta("2", "COPA");
@@ -71,6 +75,7 @@ class MazoTest extends TestCase {
 
         $this->assertEquals($mazo->obtenerPrimeraCarta(), $carta1);
         $this->assertEquals($mazo->obtenerCarta("2", "COPA"), $carta3);
+        $this->assertFalse($mazo->obtenerCarta("4", "PALO"));
     }
 
     /**
