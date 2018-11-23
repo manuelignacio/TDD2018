@@ -18,7 +18,7 @@ class Mazo {
         return $this->cant;
     }
 
-    public function obtenerCarta(){
+    public function obtenerPrimeraCarta(){
         return $this->cartas[0];
     }
 
