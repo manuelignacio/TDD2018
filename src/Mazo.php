@@ -19,7 +19,10 @@ class Mazo {
     }
 
     public function obtenerPrimeraCarta(){
-        return $this->cartas[0];
+        if (isset($this->cartas[0])) {
+            return $this->cartas[0];
+        }
+        return false;
     }
 
     public function obtenerCarta(string $nro, string $palo) {
