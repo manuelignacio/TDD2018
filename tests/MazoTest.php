@@ -57,15 +57,20 @@ class MazoTest extends TestCase {
     }
 
     /**
-     * Valida que puedo obtener una carta especifica
-     * del mazo ingresando sus valores
+     * Valida que puedo obtener la primera carta
+     * y luego una carta especifica del mazo
+     * ingresando sus valores
      */
-    public function testobtenerCarta(){
-        $carta1 = new Carta("9","PALO");
-        $carta2 = new Carta("7","ESPADA");
-        $array = array($carta1,$carta2);
+    public function testObtenerCarta(){
+        $carta1 = new Carta("9", "PALO");
+        $carta2 = new Carta("7", "ESPADA");
+        $carta3 = new Carta("2", "COPA");
+        $carta4 = new Carta("3", "ESPADA");
+        $array = array($carta1, $carta2, $carta3, $carta4);
         $mazo = new Mazo($array);
-        $this->assertEquals($mazo->obtenerCarta(),$carta1);
+
+        $this->assertEquals($mazo->obtenerPrimeraCarta(), $carta1);
+        $this->assertEquals($mazo->testObtenerCarta("2", "COPA"), $carta3);
     }
 
     /**
