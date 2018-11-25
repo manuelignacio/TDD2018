@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/tadeo1/TDD2018.svg?branch=master)](https://travis-ci.org/tadeo1/TDD2018)
-
 [![Coverage Status](https://coveralls.io/repos/github/tadeo1/TDD2018/badge.svg?branch=master)](https://coveralls.io/github/tadeo1/TDD2018?branch=master)
-
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tadeo1/TDD2018/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tadeo1/TDD2018/?branch=master)
+
+### Integrantes: Tadeo Schlieper y Manuel Lopez
 
 # Consigna
 
