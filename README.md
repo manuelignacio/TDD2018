@@ -1,6 +1,8 @@
+[![Build Status](https://travis-ci.org/tadeo1/TDD2018.svg?branch=master)](https://travis-ci.org/tadeo1/TDD2018)
+
 [![Coverage Status](https://coveralls.io/repos/github/tadeo1/TDD2018/badge.svg?branch=master)](https://coveralls.io/github/tadeo1/TDD2018?branch=master)
 
-[![Build Status](https://travis-ci.org/tadeo1/TDD2018.svg?branch=master)](https://travis-ci.org/tadeo1/TDD2018)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tadeo1/TDD2018/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tadeo1/TDD2018/?branch=master)
 
 # Consigna
 
