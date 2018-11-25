@@ -13,7 +13,7 @@ class Carta {
         $this->numero = $numero;
 
         $numeroEspañola = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
-        $paloEspañola = ["ORO", "ESPADA", "COPA", "PALO", "BASTO"];
+        $paloEspañola = ["ORO", "ESPADA", "COPA", "PALO"];
         $esEspañola = in_array($numero, $numeroEspañola) && in_array($palo, $paloEspañola);
 
         $numeroPoker = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"];

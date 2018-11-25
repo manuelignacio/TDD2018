@@ -4,17 +4,44 @@ namespace TDD;
 
 class Mazo {
 
-    protected $cartas = array();
-    protected $cant;
+    protected $tipo = NULL;
+    protected $cartas;
+    protected $cant = 0;
 
-    public function __construct($num = array()){
-        $this->cartas = $num;
-        foreach ($this->cartas as $valor) {
-            $this->cant++;
+    private function reglasDeCartasEnPlural(string $tipo) {
+        if (in_array($tipo, ['Española', 'Otra'])) {
+            return true;
         }
+        return false;
     }
 
-    public function obtCantidad(){
+    public function __construct(array $cartas = array()) {
+        $cartasFiltradas = array();
+        if (!empty($cartas)) {
+            $this->tipo = $cartas[0]->obtenerTipo();
+            $i = 0;
+            foreach ($cartas as $carta) {
+                if ($carta->obtenerTipo() == $this->tipo) {
+                    $cartasFiltradas[$i] = $carta;
+                    ++$i;
+                }
+            }
+            $cartasFiltradas = array_unique($cartasFiltradas, SORT_REGULAR);
+        }
+        $this->cartas = $cartasFiltradas;
+        $this->cant = count($cartasFiltradas);
+    }
+
+    public function obtenerTipo() {
+        if (!empty($this->tipo)) {
+            if ($this->reglasDeCartasEnPlural($this->tipo)) {
+                return ($this->tipo . "s");
+            }
+        }
+        return $this->tipo;
+    }
+
+    public function obtenerCantidad(){
         return $this->cant;
     }
 
@@ -35,20 +62,23 @@ class Mazo {
     }
 
     public function esVacio(){
-        if($this->cant != NULL){ 
-            return FALSE;
-        }	
-        return TRUE;
+        if($this->cant != 0){ 
+            return false;
+        }
+        return true;
     }
 
     public function agregarCarta(Carta $carta){
-        $this->cant = $this->cant+1;
-        $this->cartas[$this->cant] = $carta;
-        return TRUE;
+        if ($carta->obtenerTipo() == $this->tipo && !in_array($carta, $this->cartas)) {
+            ++$this->cant;
+            $this->cartas[$this->cant] = $carta;
+            return true;
+        }
+        return false;
     }
 
     public function mezclar() {
         shuffle($this->cartas);
-        return TRUE;
+        return true;
     }
 }
